@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
-//@RequiredArgsConstructor
 @Service
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
@@ -38,5 +37,10 @@ public class BookServiceImpl implements BookService {
     public BookResponseDto getById(Long id) {
         return bookMapper.mapToDto(bookRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Can not find book by id: " + id)));
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        bookRepository.deleteById(id);
     }
 }
