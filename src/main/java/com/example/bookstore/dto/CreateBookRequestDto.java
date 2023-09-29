@@ -1,18 +1,21 @@
 package com.example.bookstore.dto;
 
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import lombok.Data;
 
 @Data
 public class CreateBookRequestDto {
-    @Column(nullable = false)
+    @NotBlank
     private String title;
-    @Column(nullable = false)
+    @NotBlank
     private String author;
-    @Column(nullable = false, unique = true)
+    @NotBlank
     private String isbn;
-    @Column(nullable = false)
+    @NotNull
+    @Min(0)
     private BigDecimal price;
     private String description;
     private String coverImage;
