@@ -1,6 +1,5 @@
 package com.example.bookstore.security;
 
-import com.example.bookstore.model.User;
 import com.example.bookstore.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
