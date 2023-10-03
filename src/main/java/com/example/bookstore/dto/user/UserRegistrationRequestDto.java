@@ -1,6 +1,7 @@
 package com.example.bookstore.dto.user;
 
 import com.example.bookstore.lib.FieldMatch;
+import com.example.bookstore.lib.PasswordValidator;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -16,6 +17,7 @@ public class UserRegistrationRequestDto {
     private String email;
     @NotBlank
     @Size(min = 8, max = 20)
+    @PasswordValidator
     private String password;
     private String repeatPassword;
     @NotBlank

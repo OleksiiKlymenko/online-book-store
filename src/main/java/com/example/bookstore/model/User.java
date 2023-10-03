@@ -33,11 +33,11 @@ public class User implements UserDetails {
     private Long id;
     @Column(unique = true, nullable = false)
     private String email;
-    @NotNull
+    @Column(nullable = false)
     private String password;
-    @NotNull
+    @Column(nullable = false)
     private String firstName;
-    @NotNull
+    @Column(nullable = false)
     private String lastName;
     private String shippingAddress;
     @ManyToMany
