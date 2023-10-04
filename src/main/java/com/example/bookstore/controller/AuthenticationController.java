@@ -36,5 +36,4 @@ public class AuthenticationController {
             throws RegistrationException {
         return userService.register(request);
     }
-
 }

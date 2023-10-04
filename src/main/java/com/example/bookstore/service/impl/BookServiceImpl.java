@@ -1,7 +1,7 @@
 package com.example.bookstore.service.impl;
 
-import com.example.bookstore.dto.BookResponseDto;
-import com.example.bookstore.dto.CreateBookRequestDto;
+import com.example.bookstore.dto.book.BookResponseDto;
+import com.example.bookstore.dto.book.CreateBookRequestDto;
 import com.example.bookstore.mapper.BookMapper;
 import com.example.bookstore.model.Book;
 import com.example.bookstore.repository.BookRepository;
