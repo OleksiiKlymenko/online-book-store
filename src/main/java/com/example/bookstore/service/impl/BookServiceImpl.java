@@ -1,10 +1,11 @@
-package com.example.bookstore.service;
+package com.example.bookstore.service.impl;
 
 import com.example.bookstore.dto.BookResponseDto;
 import com.example.bookstore.dto.CreateBookRequestDto;
 import com.example.bookstore.mapper.BookMapper;
 import com.example.bookstore.model.Book;
 import com.example.bookstore.repository.BookRepository;
+import com.example.bookstore.service.BookService;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,6 +40,16 @@ public class BookServiceImpl implements BookService {
     public BookResponseDto getById(Long id) {
         return bookMapper.mapToDto(bookRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Can not find book by id: " + id)));
+    }
+
+    @Override
+    public BookResponseDto update(Long id, CreateBookRequestDto requestDto) {
+        if (!bookRepository.existsById(id)) {
+            throw new EntityNotFoundException("Book by id " + id + "doesn't exist");
+        }
+        Book book = bookMapper.mapToModel(requestDto);
+        book.setId(id);
+        return bookMapper.mapToDto(bookRepository.save(book));
     }
 
     @Override
