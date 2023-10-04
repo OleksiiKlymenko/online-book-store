@@ -1,10 +1,11 @@
 package com.example.bookstore.controller;
 
-import com.example.bookstore.dto.book.BookDtoWithoutCategoryIds;
 import com.example.bookstore.dto.CategoryResponseDto;
 import com.example.bookstore.dto.CreateCategoryRequestDto;
+import com.example.bookstore.dto.book.BookDtoWithoutCategoryIds;
 import com.example.bookstore.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/category")
 @RequiredArgsConstructor
+@Tag(name = "Categories", description = "API for managing categories")
 public class CategoryController {
     private final CategoryService categoryService;
 

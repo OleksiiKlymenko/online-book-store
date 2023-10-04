@@ -2,7 +2,6 @@ package com.example.bookstore.dto.book;
 
 import jakarta.persistence.Column;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Set;
 import lombok.Data;
 
@@ -19,5 +18,5 @@ public class BookResponseDto {
     private BigDecimal price;
     private String description;
     private String coverImage;
-    private List<Long> categoryIds;
+    private Set<Long> categoryIds;
 }

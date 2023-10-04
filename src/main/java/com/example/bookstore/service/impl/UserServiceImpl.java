@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final RoleService roleService;
 
-    private final String adminEmail = "admin@example.com";
+    private final String adminEmail = "admin5@example.com";
 
     @Override
     public User getUser() {
